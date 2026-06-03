@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Urodzinowe Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="page-wrapper">
+    <header class="hero">
+      <div class="ribbon ribbon-left"></div>
+      <div class="ribbon ribbon-right"></div>
+      <p class="subtitle-top">✨ Specjalna oferta tylko dla Ciebie ✨</p>
+      <h1 class="title">Urodzinowe<br/><em>Menu</em></h1>
+      <p class="subtitle-bottom">Wybierz, na co masz dziś ochotę, a ja się tym zajmę&nbsp;🎁</p>
+      <div class="balloons">
+        <span>🎈</span><span>🎂</span><span>🎈</span>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HOME COOKING -->
+      <section class="section">
+        <div class="section-label">
+          <span class="section-icon">🍳</span>
+          <h2>Gotuję dla Ciebie</h2>
+          <span class="section-divider"></span>
+          <p class="section-note">Prosto z naszej kuchni, z miłością</p>
+        </div>
+
+        <div class="menu-grid">
+
+          <div class="card" data-choice="Makaron z Pesto">
+            <div class="card-emoji">🌿</div>
+            <div class="card-body">
+              <h3>Makaron z Pesto</h3>
+              <p>Domowe, aromatyczne pesto z dobrą pastą — prosto i idealnie.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">Wybieram!</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+          <div class="card" data-choice="Fish and Chips">
+            <div class="card-emoji">🐟</div>
+            <div class="card-body">
+              <h3>Fish and Chips</h3>
+              <p>Chrupiące ryba w cieście i złote frytki. Pub vibe w domu.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">Wybieram!</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+          <div class="card" data-choice="Marry Me Chicken Pasta">
+            <div class="card-emoji">🍝</div>
+            <div class="card-body">
+              <h3>Marry Me Chicken Pasta</h3>
+              <p>Kremowy sos z suszonymi pomidorami i kurczakiem. Podobno zmienia życie.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">Wybieram!</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+          <div class="card" data-choice="Domowe Burgery Wege">
+            <div class="card-emoji">🍔</div>
+            <div class="card-body">
+              <h3>Domowe Burgery Wege</h3>
+              <p>Soczyste kotlety roślinne, świeże warzywa, domowe bułki. Pycha bez wyrzutów sumienia.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">Wybieram!</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GOING OUT -->
+      <section class="section section-out">
+        <div class="section-label">
+          <span class="section-icon">🚶</span>
+          <h2>Wychodzimy!</h2>
+          <span class="section-divider"></span>
+          <p class="section-note">Jeśli masz ochotę na wieczór poza domem</p>
+        </div>
+
+        <div class="menu-grid menu-grid--out">
+
+          <div class="card card--out" data-choice="Sushi 🍣">
+            <div class="card-emoji">🍣</div>
+            <div class="card-body">
+              <h3>Sushi</h3>
+              <p>Klasyk. Nigirii, maki, może omakase? Decydujesz Ty.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">Wybieram!</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+          <div class="card card--out card--last-resort" data-choice="Popeyes 🍗 (ostateczność!)">
+            <div class="card-emoji">🍗</div>
+            <div class="card-body">
+              <h3>Popeyes</h3>
+              <p class="last-resort-note">⚠️ Opcja ostateczna. Ale hej, czasem głód nie pyta.</p>
+            </div>
+            <button class="pick-btn" onclick="pick(this)">…dobra, Popeyes.</button>
+            <div class="picked-badge">❤️ Wybrano!</div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>🎂 Wszystkiego najlepszego! Cokolwiek wybierzesz, będzie pyszne 🎂</p>
+      <p class="footer-sub">…bo jestem przy tym ja 🙃</p>
+    </footer>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box">
+      <div class="modal-emoji">🎉</div>
+      <h2>Świetny wybór!</h2>
+      <p id="modal-text"></p>
+      <button onclick="closeModal()">Zamknij</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
